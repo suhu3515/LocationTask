@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileViewActivity">
+
+    <TextView
+        android:id="@+id/caps_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NAME:"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="35dp"/>
+
+    <TextView
+        android:id="@+id/vals_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="USAMA BIN ABOOBACKER"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/caps_name"
+        android:layout_marginTop="35dp"
+        android:textAllCaps="true"
+        android:layout_marginStart="65dp"/>
+
+    <TextView
+        android:id="@+id/caps_contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CONTACT:"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/caps_name"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="35dp"/>
+
+    <TextView
+        android:id="@+id/vals_contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9633058949"
+        android:textAllCaps="true"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@id/vals_name"
+        app:layout_constraintStart_toEndOf="@id/caps_contact"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="40dp"/>
+
+    <TextView
+        android:id="@+id/caps_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CATEGORY:"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/caps_contact"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="35dp"/>
+
+    <TextView
+        android:id="@+id/vals_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        android:textAllCaps="true"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@id/vals_contact"
+        app:layout_constraintStart_toEndOf="@id/caps_category"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="35dp"/>
+
+    <TextView
+        android:id="@+id/caps_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DESCRIPTION:"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/caps_category"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="35dp"/>
+
+    <TextView
+        android:id="@+id/vals_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="good one"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@id/vals_category"
+        app:layout_constraintStart_toEndOf="@id/caps_desc"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="13dp"/>
+
+    <TextView
+        android:id="@+id/caps_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADDRESS:"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/caps_desc"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="35dp"/>
+
+    <TextView
+        android:id="@+id/vals_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="KALLINGAL HOUSE"
+        android:textAllCaps="true"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@id/vals_desc"
+        app:layout_constraintStart_toEndOf="@id/caps_address"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="50dp"/>
+
+    <TextView
+        android:id="@+id/caps_empcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EMP CODE:"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/caps_address"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="35dp"/>
+
+    <TextView
+        android:id="@+id/vals_empcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A0003"
+        android:textAllCaps="true"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@id/vals_address"
+        app:layout_constraintStart_toEndOf="@id/caps_empcode"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="45dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
