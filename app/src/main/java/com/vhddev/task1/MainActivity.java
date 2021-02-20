@@ -21,6 +21,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -42,19 +43,21 @@ public class MainActivity extends AppCompatActivity{
     JsonArray locationList = null;
     public static List<Profile> profiles = null;
     public static List<Location> locations = null;
+    BottomNavigationView navigationView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         getDatas();
-        loadFragment(new ProfileFragment());
+        Fragment fragment = new ProfileFragment();
 
         profiles = new ArrayList<>();
         locations = new ArrayList<>();
 
-        BottomNavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setSelectedItemId(R.id.navigation_profile);
+        navigationView = findViewById(R.id.nav_view);
+
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -69,15 +72,31 @@ public class MainActivity extends AppCompatActivity{
                     case R.id.navigation_location:
                         fragment = new LocationFragment();
                         break;
+
                 }
 
                 if (fragment == null)
                 {
                     Toast.makeText(MainActivity.this,"No fragment", Toast.LENGTH_SHORT).show();
                 }
+
                 return loadFragment(fragment);
             }
         });
+        
+/*        if (savedInstanceState == null)
+        {
+            setDefaultFragment();
+            loadFragment(fragment);
+        }*/
+
+    }
+
+    private void setDefaultFragment()
+    {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.nav_host_fragment, new ProfileFragment());
+        transaction.commit();
     }
 
     private void getDatas() {
@@ -117,13 +136,6 @@ public class MainActivity extends AppCompatActivity{
                                 jsonObject.get("created_at").toString()));
                     }
                 }
-
-                /*ResponseClass responseClass = response.body();
-                profiles = responseClass.getSuccess();
-                locations = responseClass.getLocation();*/
-
-                //JsonObject object = new JsonObject().get(response.body().toString()).getAsJsonObject();
-                //Toast.makeText(MainActivity.this, object.toString(), Toast.LENGTH_SHORT).show();
 
             }
 

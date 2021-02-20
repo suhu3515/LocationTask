@@ -61,7 +61,8 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ProfileV
                 intent.putExtra("user_desc", profileList.get(holder.getLayoutPosition()).getDescription());
                 intent.putExtra("user_addr", profileList.get(holder.getLayoutPosition()).getAddress());
                 intent.putExtra("user_code", profileList.get(holder.getLayoutPosition()).getEmpcode());
-                context.startActivity(intent);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                mCtx.startActivity(intent);
 
             }
         });
