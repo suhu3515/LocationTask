@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nav"
+    app:startDestination="@id/profileFragment">
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.vhddev.task1.ProfileFragment"
+        tools:layout="@layout/fragment_profile"
+        android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="com.vhddev.task1.LocationFragment"
+        android:label="LocationFragment"
+        tools:layout="@layout/layout_location"/>
+
+    <activity
+        tools:layout="@layout/activity_main"
+        android:id="@+id/mainActivity"
+        android:name="com.vhddev.task1.MainActivity"
+        android:label="MainActivity" />
+</navigation>

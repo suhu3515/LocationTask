@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity{
 
         BottomNavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setSelectedItemId(R.id.navigation_profile);
+
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -78,6 +79,7 @@ public class MainActivity extends AppCompatActivity{
                 return loadFragment(fragment);
             }
         });
+        navigationView.setSelectedItemId(R.id.navigation_profile);
     }
 
     private void getDatas() {
@@ -117,6 +119,11 @@ public class MainActivity extends AppCompatActivity{
                                 jsonObject.get("created_at").toString()));
                     }
                 }
+
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.nav_host_fragment, new ProfileFragment())
+                        .commit();
 
                 /*ResponseClass responseClass = response.body();
                 profiles = responseClass.getSuccess();
